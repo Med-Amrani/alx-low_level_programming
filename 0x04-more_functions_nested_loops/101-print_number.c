@@ -37,10 +37,3 @@ void print_number(int n)
 		_putchar(((m / count) % 10) + 48);
 	}
 }
-Footer
-© 2023 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security
-Status
