@@ -1,5 +1,3 @@
-nes (30 sloc)  519 Bytes
-
 #include <stdio.h>
 #include "main.h"
 
@@ -32,3 +30,5 @@ int main(void)
 	printf("\n");
 	return (0);
 }
+
+
