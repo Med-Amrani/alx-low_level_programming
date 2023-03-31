@@ -1,1 +1,1 @@
-My work 2019
+0x06. C - More pointers, arrays and strings
