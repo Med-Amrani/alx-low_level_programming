@@ -70,11 +70,4 @@ count++;
 printf("%d\n", sum); /*print sum*/                                                                                                   
                                                                                                                                      
 return (0);                                                                                                                          
-}                                                                                                                                	
-
-
-
-:wq
-:wq
-ls
-:wq
+}                                                                                                                                
