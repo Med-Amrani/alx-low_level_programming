@@ -49,5 +49,3 @@ position++;
 printf("%d\n", change);                                                                                                              
 return (0);                                                                                                                          
 }
-
-
