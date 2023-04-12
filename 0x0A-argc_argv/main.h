@@ -1,3 +1,8 @@
-int _putchar(char c);                                                                                                                
-int check_num(char *str);
+#ifndef
+#define
+/**
+* there are no function prototypes
+*/
+
+#endif
 
