@@ -1,40 +1,41 @@
 #include "main.h"
 #include <stdlib.h>
+
 /**
-* string_nconezzzdecat - function that concatenates two strings
-* @s1: st 1
-* @s2: string 2
-* @n: ber of bytes of string 2
-* Retuhgfdfgvrn: pointer to newly allocated memory or NULL
-*/
+ * string_nconcat - Main Entry
+ * @s1: input
+ * @s2: input
+ * @n: input
+ * Return: 0
+ */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int x, y, num1, num2;
-	char *strng;
+	unsigned int i, j, k;
+	char *s;
 
 	if (s1 == NULL)
-		s1 = "";
+		i = 0;
+	else
+	{
+		for (i = 0; s1[i]; i++)
+			;
+	}
 	if (s2 == NULL)
-		s2 = "";
-
-	num1 = 0, num2 = 0;
-	while (*(s1 + num1))
-		num1++;
-	while (*(s2 + num2))
-		num2++;
-	if (n < num2)
-		num2 = n;
-
-	strng = malloc(sizeof(char) * (num1 + num2 + 1));
-
-	if (strng == 0)
-		return (0);
-
-	for (x = 0; x < num1; x++)
-		*(strng + x) = *(s1 + x);
-
-	for (x = 0, y = num1; x < num2; x++, y++)
-		*(strng + y) = *(s2 + x);
-
-	*(strng + y) = '\0';
-	return (strng);
+		j = 0;
+	else
+	{
+		for (j = 0; s2[j]; j++)
+			;
+	}
+	if (j > n)
+		j = n;
+	s = malloc(sizeof(char) * (i + j + 1));
+	if (s == NULL)
+		return (NULL);
+	for (k = 0; k < i; k++)
+		s[k] = s1[k];
+	for (k = 0; k < j; k++)
+		s[k + i] = s2[k];
+	s[i + j] = '\0';
+	return (s);
+}

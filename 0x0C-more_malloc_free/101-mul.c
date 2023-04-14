@@ -1,106 +1,39 @@
-#include<string.h>
 #include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <limits.h>
 
 /**
- * isnumber - checks if a string is a number
- * @s: pointer to string
- * Return: 1 if s is a number 0 otherwise
- */
-int isnumber(char *s)
+ * main - multiplies two positive numbers
+ * @argc: n arguments
+ * @argv: args
+ * Return: int
+**/
+
+int main(int argc, char *argv[])
 {
-	while (*s)
-	{
-		if (*s > 58 || *s < 48)
-			return (0);
-		s++;
-	}
-	return (1);
-}
-
-/**
- * mul2 - multiply two numbers
- * @s1: first number
- * @s2: second number
- * Return: pointer to result
- */
-char *mul2(char *s1, char *s2)
-{
-	int l1, l2, sum = 0, cry = 0, *res, i,
-	    j, n1, n2, r1 = 0, r2 = 0;
-	char *ans;
-
-	if (!isnumber(s1) || !isnumber(s2))
-		return (NULL);
-	l1 = strlen(s1);
-	l2 = strlen(s2);
-	res = malloc((l1 + l2) * sizeof(*res));
-	if (res == NULL)
-		return (NULL);
-	for (i = 0; i < l1 + l2; i++)
-		res[i] = 0;
-	for (i = l1 - 1; i >= 0; i--)
-	{
-		n1 = s1[i] - '0';
-		r2 = 0;
-		cry = 0;
-		for (j = l2 - 1; j >= 0; j--)
-		{
-			n2 = s2[j] - '0';
-			sum = (n1 * n2) + res[r1 + r2] + cry;
-			res[r1 + r2] = sum % 10;
-			cry = sum / 10;
-			r2++;
-		}
-		if (cry > 0)
-			res[r1 + r2] += cry;
-		r1++;
-	}
-	i = l1 + l2 - 1;
-	while (res[i] == 0 && i >= 0)
-		i--;
-	if (i < 0)
-		return ("0");
-	ans = malloc(sizeof(*ans) * (i + 2));
-	for (j = 0; i >= 0; j++, i--)
-		ans[j] = res[i] + '0';
-	ans[j] = '\0';
-	return (ans);
-}
-
-/**
- * pnt - prints a string
- * s: string to print
- */
-void print(char *s)
-{
-	int i = 0;
-
-	while (s[i])
-		_putchar(s[i++]);
-	_putchar('\n');
-}
-
-/**
- * ma - entry point
- *@argc argument count
- *@argv: arguments array
- * turn: 0 success 98 error
- */
-int main(int argc, char **argv)
-{
-	char *res;
+	unsigned long mul;
+	int i, j;
 
 	if (argc != 3)
 	{
-		print("Error");
+		printf("Error\n");
 		exit(98);
 	}
-	res = mul2(argv[1], argv[2]);
-	if (res == NULL)
+
+	for (i = 1; i < argc; i++)
 	{
-		print("Error");
-		exit(98);
+		for (j = 0; argv[i][j] != '\0'; j++)
+		{
+			if (argv[i][j] > 57 || argv[i][j] < 48)
+			{
+				printf("Error\n");
+				exit(98);
+			}
+		}
 	}
-	print(res);
+	mul = atol(argv[1]) * atol(argv[2]);
+	printf("%lu\n", mul);
 	return (0);
 }
+
