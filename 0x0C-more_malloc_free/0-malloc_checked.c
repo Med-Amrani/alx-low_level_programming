@@ -1,20 +1,18 @@
 #include "main.h"
 #include <stdlib.h>
-/*
-* med - allocates memory using malloc
-*ize of memory to be allocated
-* Return: poiner to allocated memory on success
-* emory
-*/
+
+/**
+ * malloc_checked - Main Entry
+ * @b: input
+ * Return: 0
+ */
 void *malloc_checked(unsigned int b)
 {
-	char *pntr;
+	void *p;
 
-	pntr = malloc(b);
-	if (pntr == NULL)
-	{
+	p = malloc(b);
+	if (p == NULL)
 		exit(98);
-		return (NULL);
-	}
-	return (pntr);
+	return (p);
 }
+
