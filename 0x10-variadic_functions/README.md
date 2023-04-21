@@ -1,1 +1,3 @@
- 0x10. C - Variadic functions
+## C Programming
+
+This directory contains projects on variadic functions.
