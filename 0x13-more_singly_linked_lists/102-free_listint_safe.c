@@ -1,7 +1,5 @@
 #include "lists.h"
 
-
-
 /**
  * free_listp2 - frees a linked list
  * @head: head of a list.
@@ -24,8 +22,6 @@ void free_listp2(listp_t **head)
 		*head = NULL;
 	}
 }
-
-
 
 /**
  * free_listint_safe - frees a linked list.
@@ -74,4 +70,3 @@ size_t free_listint_safe(listint_t **h)
 	free_listp2(&hptr);
 	return (nnodes);
 }
-
