@@ -2,29 +2,16 @@
 
 /**
  * free_listint - frees a linked list
- * @head: head of a list.
- *
- * Return: no return.
-*/
-
-
+ * @head: listint_t list to be freed
+ */
 void free_listint(listint_t *head)
 {
-	listint_t *temp;
+	listint_t *current_node;
 
-	while ((temp = head) != NULL)
+	while (head != NULL)
 	{
+		current_node = head;
 		head = head->next;
-		free(temp);
+		free(current_node);
 	}
 }
-Footer
-© 2023 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-P
